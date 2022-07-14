@@ -253,7 +253,7 @@ public class ResourceCentreTest {
 	}
 	
 	public void lol() {
-		
+		return true;
 	}
 
 }
