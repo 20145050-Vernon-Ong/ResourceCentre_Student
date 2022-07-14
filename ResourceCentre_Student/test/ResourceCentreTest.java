@@ -251,5 +251,9 @@ public class ResourceCentreTest {
 		camcorderList = null;
 		chromebookList = null;
 	}
+	
+	public void lol() {
+		
+	}
 
 }
