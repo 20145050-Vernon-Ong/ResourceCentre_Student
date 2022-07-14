@@ -242,31 +242,6 @@ public class ResourceCentreTest {
 
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	@After
 	public void tearDown() throws Exception {
 		cc1 = null;
