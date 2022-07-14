@@ -308,7 +308,6 @@ public class ResourceCentre {
 		
 
 		return isReturned;
-		
 	
 	}
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
@@ -323,7 +322,7 @@ public class ResourceCentre {
 			System.out.println("Chromebook " + tag + " returned");
 		}
 	}
-	}
+}
 
 
 
