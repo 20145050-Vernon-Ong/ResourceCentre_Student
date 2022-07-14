@@ -252,8 +252,4 @@ public class ResourceCentreTest {
 		chromebookList = null;
 	}
 	
-	public void lol() {
-		return true;
-	}
-
 }
