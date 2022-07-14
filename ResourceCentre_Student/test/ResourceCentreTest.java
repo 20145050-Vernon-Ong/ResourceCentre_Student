@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 // C206 AY2022 SEM1 - Eclipse 21-09 JDK16
-//test
+
 public class ResourceCentreTest {
 	private static final Object ChromebookList = null;
 	// prepare test data
