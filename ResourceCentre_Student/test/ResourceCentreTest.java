@@ -132,47 +132,51 @@ public class ResourceCentreTest {
 		// write your code here
 		
 		// boundary // Test that there is a valid(non-empty) item list for loan 
-				assertNotNull("test if there is valid Chromebook arraylist to loan from", chromebookList);
+		assertNotNull("test if there is valid Chromebook arraylist to loan from", chromebookList);
+				
+		ResourceCentre.addChromebook(chromebookList, cb1);
+				
+		// normal // Test that an item can be loan out
+		Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020");
+		assertTrue("Test if an available item is ok to loan?", ok);
+		assertFalse(chromebookList.get(0).getIsAvailable());
+		assertEquals(chromebookList.get(0).getDueDate(),"8-8-2020");
+				
 						
-				ResourceCentre.addChromebook(chromebookList, cb1);
-						
-				// normal // Test that an item can be loan out
-				Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020");
-				assertTrue("Test if an available item is ok to loan?", ok);
-				assertFalse(chromebookList.get(0).getIsAvailable());
-				assertEquals(chromebookList.get(0).getDueDate(),"8-8-2020");
-						
-								
-				// error condition // Test that item that has been loaned out cannot be loan again
-				ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020" );
-				assertFalse("Test if an same item is NOT ok to loan again?", ok);	
-						
-				// error condition // Test that a new added item that been loaned out cannot be loan again
-				ResourceCentre.addChromebook(chromebookList, cb2);	
-				cb2.setIsAvailable(false);
-				ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020" );
-				assertFalse("Test that un-available item is NOT ok to loan?", ok);
-						
-				// error condition // Test that cannot loan an non-exsiting item
-				ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0013", "8-8-2020" );
-				assertFalse("Test that non-exsiting item is NOT ok to loan?", ok);		
-			}
+		// error condition // Test that item that has been loaned out cannot be loan again
+		ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020" );
+		assertFalse("Test if an same item is NOT ok to loan again?", ok);	
+				
+		// error condition // Test that a new added item that been loaned out cannot be loan again
+		ResourceCentre.addChromebook(chromebookList, cb2);	
+		cb2.setIsAvailable(false);
+		ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020" );
+		assertFalse("Test that un-available item is NOT ok to loan?", ok);
+				
+		// error condition // Test that cannot loan an non-exsiting item
+		ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0013", "8-8-2020" );
+		assertFalse("Test that non-exsiting item is NOT ok to loan?", ok);		
+	}
 			
 	
 	
 	@Test
 	public void testDoReturnCamcorder() {
+		
 		//boundary
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
 		ResourceCentre.addCamcorder(camcorderList, cc1);
+		
 		//error
 		Boolean isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0011");
 		assertFalse("Test if available camcorder CC0011 is returned -false?", isReturned);		
+		
 		//normal
 		ResourceCentre.addCamcorder(camcorderList, cc2);
 		cc2.setIsAvailable(false);
 		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0012");
 		assertTrue("Test if loaned out amcorder CC0012 is returned- true", isReturned);
+		
 		//error
 		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0013");
 		assertFalse("Test if non-existing amcorder CC0013 is returned - false?", isReturned);
@@ -182,16 +186,20 @@ public class ResourceCentreTest {
 	public void testDoReturnChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
+		
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", chromebookList);
 		ResourceCentre.addChromebook(chromebookList, cb1);
+		
 		//error
 		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0011");
-		assertFalse("Test if available camcorder CB0011 is returned -false?", isReturned);		
+		assertFalse("Test if available camcorder CB0011 is returned -false?", isReturned);	
+		
 		//normal
 		ResourceCentre.addChromebook(chromebookList, cb2);
 		cb2.setIsAvailable(false);
 		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
 		assertTrue("Test if loaned out amcorder CB0012 is returned- true", isReturned);
+		
 		//error
 		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0013");
 		assertFalse("Test if non-existing amcorder CC0013 is returned - false?", isReturned);
