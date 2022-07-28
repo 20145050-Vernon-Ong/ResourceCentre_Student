@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-//trial
+//pearlyn
 public class ResourceCentre {
 
 	public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class ResourceCentre {
 
 		camcorderList.add(new Camcorder("CC001", "Sony HDR-CX405", 35));
 		camcorderList.add(new Camcorder("CC002", "Panasonic HC-MDH2", 10));
-		chromebookList.add(new Chromebook("CB001", "ASUS Chromebook ", "Win 10"));
+		chromebookList.add(new Chromepbook("CB001", "ASUS Chromebook ", "Win 10"));
 		chromebookList.add(new Chromebook("CB002", "HP Chromebook", "Win 10"));
 
 		int option = 0;
@@ -96,7 +96,7 @@ public class ResourceCentre {
 		}
 
 	}
-
+//pearlyn
 	public static void menu() {
 		ResourceCentre.setHeader("RESOURCE CENTRE APP");
 		System.out.println("1. Display Inventory");
