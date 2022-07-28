@@ -159,7 +159,7 @@ public class ResourceCentre {
 		}
 		return output;
 	}
-	
+	// Hew Rui viewAllChromebook
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
 		
 		String output = retrieveAllChromebook(chromebookList);
