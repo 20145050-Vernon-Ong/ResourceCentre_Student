@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-
+//pearlyn
 public class ResourceCentre {
 
 	public static void main(String[] args) {
@@ -96,7 +96,7 @@ public class ResourceCentre {
 		}
 
 	}
-
+//pearlyn
 	public static void menu() {
 		ResourceCentre.setHeader("RESOURCE CENTRE APP");
 		System.out.println("1. Display Inventory");
@@ -107,7 +107,7 @@ public class ResourceCentre {
 		Helper.line(80, "-");
 
 	}
-	
+	//pearlyn
 	public static void setHeader(String header) {
 		Helper.line(80, "-");
 		System.out.println(header);
@@ -145,15 +145,13 @@ public class ResourceCentre {
 		 output += retrieveAllCamcorder(camcorderList);	
 		System.out.println(output);
 	}
-
+//  RETRIVE ALL CHROMEBOOK  #Sachin Dev
 	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
 		String output = "";
 		// write your code here
-	
-
 		for (int i = 0; i < chromebookList.size(); i++) {
 
-			output += String.format("%-10s %-30s %-10s %-10s %-20d\n", chromebookList.get(i).getAssetTag(),
+			output += String.format("%-10s %-30s %-10s %-10s %-20s\n", chromebookList.get(i).getAssetTag(),
 					chromebookList.get(i).getDescription(), 
 					ResourceCentre.showAvailability(chromebookList.get(i).getIsAvailable()),
 					chromebookList.get(i).getDueDate(),chromebookList.get(i).getOs());
@@ -161,15 +159,7 @@ public class ResourceCentre {
 		}
 		return output;
 	}
-		
-		
-		
-		
-		
-	
-	
-	
-	
+	// Hew Rui viewAllChromebook
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
 		
 		String output = retrieveAllChromebook(chromebookList);
@@ -308,7 +298,6 @@ public class ResourceCentre {
 		
 
 		return isReturned;
-		
 	
 	}
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
@@ -323,7 +312,7 @@ public class ResourceCentre {
 			System.out.println("Chromebook " + tag + " returned");
 		}
 	}
-	}
+}
 
 
 
