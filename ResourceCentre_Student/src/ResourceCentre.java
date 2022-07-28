@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-//pearlyn
+//pearlyn, earnest
 public class ResourceCentre {
 
 	public static void main(String[] args) {
